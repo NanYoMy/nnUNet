@@ -13,26 +13,28 @@ from scipy.ndimage import binary_fill_holes
 
 def load_and_convert_case(input_image: str, input_seg: str, output_image: str, output_seg: str,
                           min_component_size: int = 50):
-    seg = io.imread(input_seg)
-    seg[seg == 255] = 1
-    image = io.imread(input_image)
-    image = image.sum(2)
-    mask = image == (3 * 255)
-    # the dataset has large white areas in which road segmentations can exist but no image information is available.
-    # Remove the road label in these areas
-    mask = generic_filter_components(mask, filter_fn=lambda ids, sizes: [i for j, i in enumerate(ids) if
-                                                                         sizes[j] > min_component_size])
-    mask = binary_fill_holes(mask)
-    seg[mask] = 0
-    io.imsave(output_seg, seg, check_contrast=False)
+    # seg = io.imread(input_seg)
+    # seg[seg == 255] = 1
+    # image = io.imread(input_image)
+    # image = image.sum(2)
+    # mask = image == (3 * 255)
+    # # the dataset has large white areas in which road segmentations can exist but no image information is available.
+    # # Remove the road label in these areas
+    # mask = generic_filter_components(mask, filter_fn=lambda ids, sizes: [i for j, i in enumerate(ids) if
+    #                                                                      sizes[j] > min_component_size])
+    # mask = binary_fill_holes(mask)
+    # seg[mask] = 0
+    # io.imsave(output_seg, seg, check_contrast=False)
+    
     shutil.copy(input_image, output_image)
+    shutil.copy(input_seg, output_seg)
 
 
 if __name__ == "__main__":
     # extracted archive from https://www.kaggle.com/datasets/insaff/massachusetts-roads-dataset?resource=download
-    source = '../datasets/road_segmentation_ideal'
+    source = '../datasets/CP_PNG'
 
-    dataset_name = 'Dataset120_RoadSegmentation'
+    dataset_name = 'Dataset100_CPSegmentation'
 
     imagestr = join(nnUNet_raw, dataset_name, 'imagesTr')
     imagests = join(nnUNet_raw, dataset_name, 'imagesTs')
@@ -83,5 +85,4 @@ if __name__ == "__main__":
             )
         _ = [i.get() for i in r]
 
-    generate_dataset_json(join(nnUNet_raw, dataset_name), {0: 'R', 1: 'G', 2: 'B'}, {'background': 0, 'road': 1},
-                          num_train, '.png', dataset_name=dataset_name)
+    generate_dataset_json(join(nnUNet_raw, dataset_name), {0: 'R', 1: 'G', 2: 'B'}, {'background': 0, 'Tumor': 1,'Pituitary': 2, 'SPH': 3, 'Brain': 4, 'Sipercistern': 5,  'Ventricle': 6}, num_train, '.png', dataset_name=dataset_name)

@@ -40,7 +40,7 @@ for center_dir in os.listdir(input_dir):
                         img = img.convert('L')
 
                     if file.endswith('_gd.nii.gz'):
-                        output_file = os.path.join(output_dir_output, f'{center_dir}_{file[:-7]}_s{i:03d}.png')
+                        output_file = os.path.join(output_dir_output, f'{center_dir}_{file[:-10]}_s{i:03d}.png')
                     else:
                         output_file = os.path.join(output_dir_input, f'{center_dir}_{file[:-7]}_s{i:03d}.png')
                     img.save(output_file)
