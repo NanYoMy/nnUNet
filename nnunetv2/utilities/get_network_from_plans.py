@@ -23,6 +23,7 @@ def get_network_from_plans(arch_class_name, arch_kwargs, arch_kwargs_req_import,
         nw_class = recursive_find_python_class(join(dynamic_network_architectures.__path__[0], "architectures"),
                                                network_class.split(".")[-1],
                                                'dynamic_network_architectures.architectures')
+        print(f"Trying to find network class {network_class} in dynamic_network_architectures.architectures...")
         if nw_class is not None:
             print(f'FOUND IT: {nw_class}')
         else:
