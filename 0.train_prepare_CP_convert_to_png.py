@@ -4,11 +4,16 @@ import numpy as np
 from PIL import Image
 from tools.dir import mk_or_cleardir
 
+'''
+
+用Center A训练，其它来测试
+
+'''
+
 # Set input and output directories
 input_dir = '../datasets/CP'
 output_dir_input = '../datasets/CP_PNG/training/input'
 output_dir_output = '../datasets/CP_PNG/training/output'
-
 
 
 # Create output directories if they don't exist

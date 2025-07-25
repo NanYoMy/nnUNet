@@ -31,7 +31,7 @@ def load_and_convert_case(input_image: str, input_seg: str, output_image: str, o
 
 
 if __name__ == "__main__":
-    # extracted archive from https://www.kaggle.com/datasets/insaff/massachusetts-roads-dataset?resource=download
+
     source = '../datasets/CP_PNG'
 
     dataset_name = 'Dataset100_CPSegmentation'
