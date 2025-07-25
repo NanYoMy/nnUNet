@@ -1,6 +1,7 @@
 import os
 import SimpleITK as sitk
 import numpy as np
+from PIL import Image
 from tools.dir import mk_or_cleardir
 
 # Set input and output directories
