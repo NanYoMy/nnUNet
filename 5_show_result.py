@@ -8,18 +8,15 @@ import os
 
 op =SaveNumpy2Png()
 
-subject_ID= '1049'# 025 0212 0215 0217 0219 1036 1037倒数第三个样本 2033 2047 2048
-case="[2|4|6]"
-model=[2,3,4,1,5]
+case="1001"
 
 all_path=[]
 # base_dir="F:/dwb/myopsnew"
-base_dir= "./result/CP/"
+base_dir= "../data_result/nnUNet_raw/Dataset100_CPSegmentation/"
 
-ori_c0= sort_glob(f"{base_dir}/U_Net/models/model1/image_{case}.nii.gz")
+ori_c0= sort_glob(f"{base_dir}/imagesTr/CenterA_Case{case}*png")
 assert  len(ori_c0)>0
-gd= sort_glob(f"{base_dir}/U_Net/models/model1/gt_{case}.nii.gz")
-
+gd= sort_glob(f"{base_dir}/labelsTr/CenterA_Case{case}*png")
 
 
 numrows=0
@@ -30,15 +27,15 @@ all_path=[]
 # all_path.extend(tmp)
 
 #金标准
-tmp = op.merge_two_imgs_with_text(ori_c0, gd, gd)
+tmp = op.merge_two_png_imgs_with_text(ori_c0, gd, gd)
 all_path.extend(tmp)
 
-for i in ['U_Net_IB_bl_5/models/model5/','U_Net_IB_bl_5-4/models/model5/','U_Net_IB_bl_5-4-3/models/model5/','U_Net/models/model5/','R2U_Net/models/model5/','AttU_Net/models/model5/']:
+for i in ['imagesTr_pred']:
 
     pred= sort_glob(f"{base_dir}/{i}/output_{case}.nii.gz")
     numrows=len(pred)
     print(f"pred len:{len(pred)}")
-    tmp = op.merge_two_imgs_with_text(ori_c0, pred, gd)
+    tmp = op.merge_two_png_imgs_with_text(ori_c0, pred, gd)
 
     all_path.extend(tmp)
 

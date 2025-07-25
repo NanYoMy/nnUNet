@@ -377,6 +377,57 @@ class SaveNumpy2Png():
         self.invoke = self.invoke + 1
         return pathes
 
+    def read_png_and_convert_to_array(self，image_path):
+        """
+        Reads a PNG image using PIL and converts it to a NumPy array.
+
+        Args:
+            image_path (str): The path to the PNG image file.
+
+        Returns:
+            numpy.ndarray: A NumPy array representing the image, or None if the image cannot be read.
+        """
+        try:
+            img = Image.open(image_path)
+            img=img.convert('Gray')  # Ensure the image is in RGB format
+            img_array = np.array(img)
+            return img_array
+        except FileNotFoundError:
+            print(f"Error: Image not found at {image_path}")
+            return None
+        except Exception as e:
+            print(f"Error reading image: {e}")
+            return None
+    
+    def merge_two_png_imgs_with_text(self, imgs, predLabs, gdLabs, color=[colorT2[0], colorDe[0],colorC0[0],colorYellow[0],colorGD[0],myoc0[0],myode[0]], text=False,labs_reindex={1:[1],2:[2],3:[3],4:[4],5:[5],6:[6],0:[0]}):
+        pathes = []
+        mk_or_cleardir(f'{self.base_dir}/tmp_{self.invoke}/')
+        for img, preLab, gdLab in zip(imgs, predLabs, gdLabs):
+
+            
+            img_array = self.read_png_and_convert_to_array(img)
+            lab_array = self.read_png_and_convert_to_array(preLab)
+            print(np.unique(lab_array))
+            lab_array=reindex_label_array_by_dict(lab_array,labs_reindex)
+            
+            labs = np.unique(lab_array)
+            print(labs)
+            tmp_color=[color[i-1] for i in labs[1:] ]
+            # edema_array = reindex_label_array_by_dict(edema_array, {1: [1220, 2221]})
+
+            path = self.save_img_with_mask_withoutparma(img_array, lab_array, f'{self.base_dir}/tmp_{self.invoke}/',
+                                                        f"{os.path.basename(img).split('.')[0]}.png", colors=tmp_color,
+                                                        mash_alpha=1)
+
+            if text:
+                dice = round(self.cal_dc(gdLab, preLab) * 100, 2)
+                self.add_text(path, f"{dice}%")
+
+            pathes.append(path)
+
+        self.invoke = self.invoke + 1
+        return pathes
+
     def merge_two_imgs_with_text_FIXED_ERROR(self, imgs, predLabs, gdLabs, color=[colorT2[0], colorDe[0]], text=False):
         pathes = []
         mk_or_cleardir(f'{self.base_dir}/tmp_{self.invoke}/')
