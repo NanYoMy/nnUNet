@@ -377,7 +377,7 @@ class SaveNumpy2Png():
         self.invoke = self.invoke + 1
         return pathes
 
-    def read_png_and_convert_to_array(self，image_path):
+    def read_png_and_convert_to_array(self,image_path):
         """
         Reads a PNG image using PIL and converts it to a NumPy array.
 
@@ -389,7 +389,7 @@ class SaveNumpy2Png():
         """
         try:
             img = Image.open(image_path)
-            img=img.convert('Gray')  # Ensure the image is in RGB format
+            img=img.convert('Gray')# Ensure the image is in RGB format
             img_array = np.array(img)
             return img_array
         except FileNotFoundError:
