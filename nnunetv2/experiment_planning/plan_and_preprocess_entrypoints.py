@@ -106,7 +106,7 @@ def preprocess_entry():
 def plan_and_preprocess_entry():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', nargs='+', type=int,
+    parser.add_argument('-d', nargs='+', type=int, default=[100],
                         help="[REQUIRED] List of dataset IDs. Example: 2 4 5. This will run fingerprint extraction, experiment "
                              "planning and preprocessing for these datasets. Can of course also be just one dataset")
     parser.add_argument('-fpe', type=str, required=False, default='DatasetFingerprintExtractor',
@@ -114,7 +114,7 @@ def plan_and_preprocess_entry():
                              '\'DatasetFingerprintExtractor\'.')
     parser.add_argument('-npfp', type=int, default=8, required=False,
                         help='[OPTIONAL] Number of processes used for fingerprint extraction. Default: 8')
-    parser.add_argument("--verify_dataset_integrity", required=False, default=False, action="store_true",
+    parser.add_argument("--verify_dataset_integrity", required=False, default=True, action="store_true",
                         help="[RECOMMENDED] set this flag to check the dataset integrity. This is useful and should be done once for "
                              "each dataset!")
     parser.add_argument('--no_pp', default=False, action='store_true', required=False,

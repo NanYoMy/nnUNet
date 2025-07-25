@@ -5,8 +5,8 @@ from PIL import Image
 
 # Set input and output directories
 input_dir = '../datasets/CP'
-output_dir_input = '../datasets/CP_PNG/input'
-output_dir_output = '../datasets/CP_PNG/output'
+output_dir_input = '../datasets/CP_PNG/training/input'
+output_dir_output = '../datasets/CP_PNG/training/output'
 
 # Create output directories if they don't exist
 os.makedirs(output_dir_input, exist_ok=True)
@@ -32,15 +32,15 @@ for center_dir in os.listdir(input_dir):
                     if not file.endswith('_gd.nii.gz'):
                         slice = (slice - slice.min()) / (slice.max() - slice.min()) * 255
                         slice = slice.astype(np.uint8)
+                        
 
                     img = Image.fromarray(slice)
 
-                    # Convert to grayscale if it's not already
-                    if img.mode != 'L':
-                        img = img.convert('L')
 
                     if file.endswith('_gd.nii.gz'):
+                        img = img.convert('L')
                         output_file = os.path.join(output_dir_output, f'{center_dir}_{file[:-10]}_s{i:03d}.png')
                     else:
+                        img = img.convert('RGB')
                         output_file = os.path.join(output_dir_input, f'{center_dir}_{file[:-7]}_s{i:03d}.png')
                     img.save(output_file)
