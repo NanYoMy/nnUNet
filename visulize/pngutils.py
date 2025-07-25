@@ -97,6 +97,18 @@ class SaveNumpy2Png():
         cv2.imwrite(f"{dir}/{name}", img * 255)
         return f"{dir}/{name}"
 
+    def save_png_with_mask_withoutparma(self, img, lab, dir, name, colors=None, mash_alpha=0.001):
+
+        mkdir_if_not_exist(dir)
+        img = np.squeeze(img).astype(np.float32)
+        lab = np.squeeze(lab).astype(np.float32)
+
+        img = color.label2rgb(lab.astype(np.uint8), img, colors=colors, alpha=mash_alpha,
+                              bg_label=0, bg_color=None)
+        # img = cv2.flip(img, 0)
+        cv2.imwrite(f"{dir}/{name}", img * 255)
+        return f"{dir}/{name}"
+    
     def save_mask(self, lab, dir, name, colors=None, mash_alpha=0.001, param=None):
         mkdir_if_not_exist(dir)
 
@@ -389,7 +401,7 @@ class SaveNumpy2Png():
         """
         try:
             img = Image.open(image_path)
-            img=img.convert('Gray')# Ensure the image is in RGB format
+            img=img.convert('L')# Ensure the image is in RGB format
             img_array = np.array(img)
             return img_array
         except FileNotFoundError:
@@ -415,7 +427,7 @@ class SaveNumpy2Png():
             tmp_color=[color[i-1] for i in labs[1:] ]
             # edema_array = reindex_label_array_by_dict(edema_array, {1: [1220, 2221]})
 
-            path = self.save_img_with_mask_withoutparma(img_array, lab_array, f'{self.base_dir}/tmp_{self.invoke}/',
+            path = self.save_png_with_mask_withoutparma(img_array, lab_array, f'{self.base_dir}/tmp_{self.invoke}/',
                                                         f"{os.path.basename(img).split('.')[0]}.png", colors=tmp_color,
                                                         mash_alpha=1)
 

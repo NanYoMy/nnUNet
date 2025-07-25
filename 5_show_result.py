@@ -32,7 +32,7 @@ all_path.extend(tmp)
 
 for i in ['imagesTr_pred']:
 
-    pred= sort_glob(f"{base_dir}/{i}/output_{case}.nii.gz")
+    pred= sort_glob(f"{base_dir}/{i}/CenterA_Case{case}*png")
     numrows=len(pred)
     print(f"pred len:{len(pred)}")
     tmp = op.merge_two_png_imgs_with_text(ori_c0, pred, gd)
