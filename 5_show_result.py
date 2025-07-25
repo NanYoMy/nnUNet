@@ -18,13 +18,8 @@ ori_c0= sort_glob(f"{base_dir}/imagesTr/CenterA_Case{case}*png")
 assert  len(ori_c0)>0
 gd= sort_glob(f"{base_dir}/labelsTr/CenterA_Case{case}*png")
 
-
 numrows=0
 all_path=[]
-
-#图像
-# tmp=op.save_imgs(ori_c0)
-# all_path.extend(tmp)
 
 #金标准
 tmp = op.merge_two_png_imgs_with_text(ori_c0, gd, gd)
@@ -40,11 +35,6 @@ for i in ['imagesTr_pred']:
     all_path.extend(tmp)
 
 
-
-# gd= sort_glob(f"{base_dir}/gd/Case{subject_ID}*.nii.gz")
-
-
-
 numimages = len(all_path) # Ignore name of program and column input
 
 numcols=numimages//numrows
@@ -52,10 +42,3 @@ numcols=numimages//numrows
 generate_img(all_path, numrows, numcols, f"{base_dir}/comparison.png")
 print(f"{base_dir}/comparison.png")
 
-
-# #自动打开输出文件夹
-# output_dir = os.path.dirname(f"{base_dir}/comparison.png")
-# if os.path.exists(output_dir):
-#     os.system(f"explorer {output_dir}")  # Windows系统使用explorer
-# else:
-#     print(f"Error: Directory not found: {output_dir}")
