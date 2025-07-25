@@ -53,9 +53,9 @@ generate_img(all_path, numrows, numcols, f"{base_dir}/comparison.png")
 print(f"{base_dir}/comparison.png")
 
 
-#自动打开输出文件夹
-output_dir = os.path.dirname(f"{base_dir}/comparison.png")
-if os.path.exists(output_dir):
-    os.system(f"explorer {output_dir}")  # Windows系统使用explorer
-else:
-    print(f"Error: Directory not found: {output_dir}")
+# #自动打开输出文件夹
+# output_dir = os.path.dirname(f"{base_dir}/comparison.png")
+# if os.path.exists(output_dir):
+#     os.system(f"explorer {output_dir}")  # Windows系统使用explorer
+# else:
+#     print(f"Error: Directory not found: {output_dir}")

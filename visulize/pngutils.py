@@ -102,7 +102,7 @@ class SaveNumpy2Png():
         mkdir_if_not_exist(dir)
         img = np.squeeze(img).astype(np.float32)
         lab = np.squeeze(lab).astype(np.float32)
-
+        img = img.astype('uint8')
         img = color.label2rgb(lab.astype(np.uint8), img, colors=colors, alpha=mash_alpha,
                               bg_label=0, bg_color=None)
         # img = cv2.flip(img, 0)
