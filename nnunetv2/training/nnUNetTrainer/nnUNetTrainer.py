@@ -988,6 +988,7 @@ class nnUNetTrainer(object):
         with autocast(self.device.type, enabled=True) if self.device.type == 'cuda' else dummy_context():
             output = self.network(data)
             # del data
+            print("training")
             l = self.loss(output, target)
 
         if self.grad_scaler is not None:
