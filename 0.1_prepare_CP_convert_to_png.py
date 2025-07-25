@@ -1,6 +1,7 @@
 import os
 import SimpleITK as sitk
 import numpy as np
+from PIL import Image
 from tools.dir import mk_or_cleardir
 
 # Set input and output directories
@@ -9,13 +10,14 @@ output_dir_input = '../datasets/CP_PNG/training/input'
 output_dir_output = '../datasets/CP_PNG/training/output'
 
 
+
 # Create output directories if they don't exist
 mk_or_cleardir(output_dir_input)
 mk_or_cleardir(output_dir_output)
 
 
 # Loop through subdirectories (CenterA-D)
-for center_dir in os.listdir(input_dir):
+for center_dir in ['CenterA']:
     center_dir_path = os.path.join(input_dir, center_dir)
     if os.path.isdir(center_dir_path):
         # Loop through NIfTI files in each subdirectory
