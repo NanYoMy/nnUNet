@@ -64,6 +64,6 @@ if __name__ == "__main__":
     source_directory = r"../data_result/nnUNet_results/Dataset100_CPSegmentation/nnUNetTrainer__nnUNetPlans__2d/"  # Replace with the actual source directory
     destination_directory = r"../data_result/nnUNet_results/Dataset100_CPSegmentation/nnUNetTrainer__nnUNetPlans__2d/"  # Replace with the actual destination directory
     fold_to_copy = 1  # The fold number to copy (default is 1)
-    copy_interval = 1  # Interval between checks in minutes (default is 30)
+    copy_interval = 30  # Interval between checks in minutes (default is 30)
 
     copy_fold_if_changed(source_directory, destination_directory, fold_to_copy, copy_interval)
