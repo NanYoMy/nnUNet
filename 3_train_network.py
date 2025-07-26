@@ -2,7 +2,7 @@ from nnunetv2.run.run_training import run_training_entry as nnUNetv2_train
 import os
 import shutil   
 
-# D:/Users/Suma/anaconda3/envs/cardiacmesh/python.exe h:/BaiduNetdiskDownload/nnUnetV2/nnUnetV2/code/3_train_network.py 100 2d 1
+#python.exe 3_train_network.py 100 2d 1
 
 if __name__ == "__main__":
     # os.environ['OMP_NUM_THREADS'] = '1'
