@@ -2,6 +2,7 @@ from nnunetv2.run.run_training import run_training_entry as nnUNetv2_train
 import os
 import shutil   
 
+#python.exe 3_train_network.py 100 2d all
 #python.exe 3_train_network.py 100 2d 1
 
 if __name__ == "__main__":
