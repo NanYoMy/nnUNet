@@ -2,14 +2,11 @@
 
 @REM 0.train_prepare_CP_convert_to_png.py
 
-
 @REM 1_prepare_CP_for_nnunetv2.py
 
 @REM 2_plan_and_preprocess.py
 
-
-
-@REM 3_train_network.py
+@REM 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPP
 
 
 python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_1 -c 2d -d 100 -f 1
