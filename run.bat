@@ -9,7 +9,7 @@
 
 
 
-@REM 3_train_network.py
+@REM 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPP
 
 
 python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_1 -c 2d -d 101 -f 1

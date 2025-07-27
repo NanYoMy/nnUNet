@@ -47,7 +47,7 @@ class UNetPlusPlus(nn.Module):
             x = x + encoder_outputs.pop()
         return x
 
-class nnUNetTrainerBN(nnUNetTrainer):
+class nnUNetTrainerUNetPP(nnUNetTrainer):
     @staticmethod
     def build_network_architecture(architecture_class_name: str,
                                    arch_init_kwargs: dict,
@@ -56,5 +56,6 @@ class nnUNetTrainerBN(nnUNetTrainer):
                                    num_output_channels: int,
                                    enable_deep_supervision: bool = True) -> nn.Module:
 
+        
         
         return UNetPlusPlus(num_channels=num_input_channels, num_classes=num_output_channels)
