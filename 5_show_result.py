@@ -8,15 +8,15 @@ import os
 
 op =SaveNumpy2Png()
 
-case="1001"
+case="1002"
 
 all_path=[]
 # base_dir="F:/dwb/myopsnew"
-base_dir= "../data_result/nnUNet_raw/Dataset100_CPSegmentation/"
+base_dir= "../data_result/nnUNet_raw/Dataset101_CPSegmentation/"
 
-ori_c0= sort_glob(f"{base_dir}/imagesTr/CenterA_Case{case}*png")
+ori_c0= sort_glob(f"{base_dir}/imagesTs/CenterB_Case{case}*png")
 assert  len(ori_c0)>0
-gd= sort_glob(f"{base_dir}/labelsTr/CenterA_Case{case}*png")
+gd= sort_glob(f"{base_dir}/labelsTs/CenterB_Case{case}*png")
 
 numrows=0
 all_path=[]
@@ -25,9 +25,9 @@ all_path=[]
 tmp = op.merge_two_png_imgs_with_text(ori_c0, gd, gd)
 all_path.extend(tmp)
 
-for i in ['imagesTr_pred']:
+for i in ['predictions_final']:
 
-    pred= sort_glob(f"{base_dir}/{i}/CenterA_Case{case}*png")
+    pred= sort_glob(f"{base_dir}/{i}/CenterB_Case{case}*png")
     numrows=len(pred)
     print(f"pred len:{len(pred)}")
     tmp = op.merge_two_png_imgs_with_text(ori_c0, pred, gd)
