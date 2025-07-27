@@ -6,7 +6,10 @@
 
 @REM 2_plan_and_preprocess.py
 
-@REM 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPP
+
+参考nnUNetTrainerUNetPP添加网络
+
+@REM python 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPP
 
 
 python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_1 -c 2d -d 100 -f 1
