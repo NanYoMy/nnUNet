@@ -12,19 +12,19 @@
 @REM 3_train_network.py
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_1 -c 2d -d 101 -f 1
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_1 -c 2d -d 100 -f 1
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_2 -c 2d -d 101 -f 2
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_2 -c 2d -d 100 -f 2
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_3 -c 2d -d 101 -f 3
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_3 -c 2d -d 100 -f 3
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_4 -c 2d -d 101 -f 4
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_4 -c 2d -d 100 -f 4
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_5 -c 2d -d 101 -f 5
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_5 -c 2d -d 100 -f 5
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset101_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset101_CPSegmentation\predictions_final -c 2d -d 101 -f all
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_final -c 2d -d 100 -f all
