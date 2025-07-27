@@ -3,9 +3,9 @@ from dynamic_network_architectures.building_blocks.helper import get_matching_ba
 from torch import nn
 import torch
 from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
-from nnunetv2.utilities.network import U_Net
+from nnunetv2.utilities.network import U_Net_IB, AttU_Net_IB
 
-class nnUNetTrainerUNetPP(nnUNetTrainer):
+class nnUNetTrainerIBUNet_5(nnUNetTrainer):
     def __init__(
         self,
         plans: dict,
@@ -28,7 +28,7 @@ class nnUNetTrainerUNetPP(nnUNetTrainer):
 
         
         
-        return U_Net(img_ch=num_input_channels, output_ch=num_output_channels)
+        return U_Net_IB(img_ch=num_input_channels, output_ch=num_output_channels,bottleneck_layers=[5])
 
     def set_deep_supervision_enabled(self, enabled: bool):
         """

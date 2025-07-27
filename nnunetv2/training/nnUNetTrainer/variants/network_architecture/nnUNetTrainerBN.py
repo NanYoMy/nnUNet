@@ -3,9 +3,21 @@ from dynamic_network_architectures.building_blocks.helper import get_matching_ba
 from torch import nn
 
 from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
-
+import torch
+from nnunetv2.utilities.network import U_Net
 
 class nnUNetTrainerBN(nnUNetTrainer):
+    def __init__(
+        self,
+        plans: dict,
+        configuration: str,
+        fold: int,
+        dataset_json: dict,
+        device: torch.device = torch.device("cuda"),
+    ):
+        super().__init__(plans, configuration, fold, dataset_json, device)
+        self.enable_deep_supervision = False
+        self.num_epochs = 200
     @staticmethod
     def build_network_architecture(architecture_class_name: str,
                                    arch_init_kwargs: dict,
@@ -23,6 +35,7 @@ class nnUNetTrainerBN(nnUNetTrainer):
         bn_class = get_matching_batchnorm(conv_op)
         arch_init_kwargs['norm_op'] = bn_class.__module__ + '.' + bn_class.__name__
         arch_init_kwargs['norm_op_kwargs'] = {'eps': 1e-5, 'affine': True}
+          
 
         return nnUNetTrainer.build_network_architecture(architecture_class_name,
                                                         arch_init_kwargs,
