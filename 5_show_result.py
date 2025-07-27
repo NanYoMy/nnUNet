@@ -8,11 +8,11 @@ import os
 
 op =SaveNumpy2Png()
 
-case="CenterB_Case1007"
+case="CenterC_Case1001"
 
 all_path=[]
 # base_dir="F:/dwb/myopsnew"
-base_dir= "../data_result/nnUNet_raw/Dataset101_CPSegmentation/"
+base_dir= "../data_result/nnUNet_raw/Dataset100_CPSegmentation/"
 
 ori_c0= sort_glob(f"{base_dir}/imagesTs/{case}*png")
 assert  len(ori_c0)>0
