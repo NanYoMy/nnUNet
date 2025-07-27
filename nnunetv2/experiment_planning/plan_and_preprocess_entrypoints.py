@@ -106,7 +106,7 @@ def preprocess_entry():
 def plan_and_preprocess_entry():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', nargs='+', type=int, default=[100],
+    parser.add_argument('-d', nargs='+', type=int, 
                         help="[REQUIRED] List of dataset IDs. Example: 2 4 5. This will run fingerprint extraction, experiment "
                              "planning and preprocessing for these datasets. Can of course also be just one dataset")
     parser.add_argument('-fpe', type=str, required=False, default='DatasetFingerprintExtractor',
