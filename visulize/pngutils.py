@@ -410,8 +410,15 @@ class SaveNumpy2Png():
         except Exception as e:
             print(f"Error reading image: {e}")
             return None
-    
-    def merge_two_png_imgs_with_text(self, imgs, predLabs, gdLabs, color=[colorT2[0], colorDe[0],colorC0[0],colorYellow[0],colorGD[0],my_color2[0],myode[0]], text=False,labs_reindex={1:[1],2:[2],3:[3],4:[4],5:[5],6:[6],0:[0]}):
+    # 
+# tumor=(0,0,1)
+# pituitary=(0,1,0)
+# SPH=(1,0,0)
+# Brain=(0,1,1)
+# Sipercistern=(1,1,0)
+# Ventricle=(1,0,1)
+
+    def merge_two_png_imgs_with_text(self, imgs, predLabs, gdLabs, color=[tumor, pituitary,SPH,Brain,Sipercistern,Ventricle], text=False,labs_reindex={1:[1],2:[2],3:[3],4:[4],5:[5],6:[6],0:[0]}):
         pathes = []
         mk_or_cleardir(f'{self.base_dir}/tmp_{self.invoke}/')
         for img, preLab, gdLab in zip(imgs, predLabs, gdLabs):
@@ -429,7 +436,7 @@ class SaveNumpy2Png():
 
             path = self.save_png_with_mask_withoutparma(img_array, lab_array, f'{self.base_dir}/tmp_{self.invoke}/',
                                                         f"{os.path.basename(img).split('.')[0]}.png", colors=tmp_color,
-                                                        mash_alpha=1)
+                                                        mash_alpha=0.5)
 
             if text:
                 dice = round(self.cal_dc(gdLab, preLab) * 100, 2)
