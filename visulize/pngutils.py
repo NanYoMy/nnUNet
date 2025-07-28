@@ -436,7 +436,7 @@ class SaveNumpy2Png():
 
             path = self.save_png_with_mask_withoutparma(img_array, lab_array, f'{self.base_dir}/tmp_{self.invoke}/',
                                                         f"{os.path.basename(img).split('.')[0]}.png", colors=tmp_color,
-                                                        mash_alpha=0.5)
+                                                        mash_alpha=0.4)
 
             if text:
                 dice = round(self.cal_dc(gdLab, preLab) * 100, 2)
