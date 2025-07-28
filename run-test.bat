@@ -22,6 +22,7 @@ python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/image
 
 python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\unetBN_pred -c 2d -d 100 -f all  -tr nnUNetTrainerBN
 
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\plainunet_pred -c 2d -d 100 -f all  -tr nnUNetTrainerUNetPlain
 
 @REM python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_2 -c 2d -d 100 -f 2
 
