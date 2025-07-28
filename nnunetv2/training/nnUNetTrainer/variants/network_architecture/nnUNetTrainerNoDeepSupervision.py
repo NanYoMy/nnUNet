@@ -13,3 +13,4 @@ class nnUNetTrainerNoDeepSupervision(nnUNetTrainer):
     ):
         super().__init__(plans, configuration, fold, dataset_json, device)
         self.enable_deep_supervision = False
+        self.num_epochs = 200   
