@@ -3,7 +3,7 @@ from dynamic_network_architectures.building_blocks.helper import get_matching_ba
 from torch import nn
 import torch
 from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
-from nnunetv2.utilities.network import U_Net_IB, AttU_Net_IB
+from nnunetv2.utilities.network import U_Net_IB
 
 class nnUNetTrainerIBUNet_5_4(nnUNetTrainer):
     def __init__(
