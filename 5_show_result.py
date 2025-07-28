@@ -8,7 +8,7 @@ import os
 
 op =SaveNumpy2Png()
 
-case="CenterD_Case1007"
+case="CenterC_Case1007"
 
 all_path=[]
 # base_dir="F:/dwb/myopsnew"
