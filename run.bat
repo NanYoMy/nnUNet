@@ -7,11 +7,12 @@
 @REM 2_plan_and_preprocess.py
 
 @REM python 3_train_network.py 100 2d all -tr nnUNetTrainerAttUNet
+python 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPlain
 python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5_4_3
 python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5_4
 python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5
 @REM python 3_train_network.py 100 2d all -tr nnUNetTrainerNoDeepSupervision
-python 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPlain
+
 @REM python 3_train_network.py 100 2d all -tr nnUNetTrainerBN
 
 @REM python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_1 -c 2d -d 100 -f 1
