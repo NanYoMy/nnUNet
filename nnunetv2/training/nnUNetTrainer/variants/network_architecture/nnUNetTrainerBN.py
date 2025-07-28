@@ -17,7 +17,7 @@ class nnUNetTrainerBN(nnUNetTrainer):
     ):
         super().__init__(plans, configuration, fold, dataset_json, device)
         self.enable_deep_supervision = False
-        self.num_epochs = 200
+        self.num_epochs = 100
     @staticmethod
     def build_network_architecture(architecture_class_name: str,
                                    arch_init_kwargs: dict,
