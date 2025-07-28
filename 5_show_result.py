@@ -25,7 +25,7 @@ all_path=[]
 tmp = op.merge_two_png_imgs_with_text(ori_c0, gd, gd)
 all_path.extend(tmp)
 
-for i in ['predictions_3','predictions_4','predictions_5','predictions_1','predictions_2','predictions_final']:
+for i in ['nnunet_final_pred','attunet_pred','IBunet_pred','plainunet_pred','unetBN_pred']:
 
     pred= sort_glob(f"{base_dir}/{i}/{case}*png")
     numrows=len(pred)
