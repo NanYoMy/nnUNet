@@ -18,14 +18,17 @@
 @REM python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\attunet_pred -c 2d -d 100 -f all  -tr nnUNetTrainerAttUNet
 
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\nodeep_pred -c 2d -d 100 -f all  -tr nnUNetTrainerNoDeepSupervision
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\nodeep_pred -c 2d -d 101 -f all  -tr nnUNetTrainerNoDeepSupervision
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\unetBN_pred -c 2d -d 100 -f all  -tr nnUNetTrainerBN
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\unetBN_pred -c 2d -d 101 -f all  -tr nnUNetTrainerBN
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\plainunet_pred -c 2d -d 100 -f all  -tr nnUNetTrainerUNetPlain
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\plainunet_pred -c 2d -d 101 -f all  -tr nnUNetTrainerUNetPlain
 
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\IBunet_5_4_3_pred -c 2d -d 101 -f all  -tr nnUNetTrainerIBUNet_5_4_3
 
-python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\IBunet_5_4_3_pred -c 2d -d 100 -f all  -tr nnUNetTrainerIBUNet_5_4_3
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\IBunet_5_4_3_pred -c 2d -d 101 -f all  -tr nnUNetTrainerIBUNet_5_4
+
+python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\IBunet_5_4_3_pred -c 2d -d 101 -f all  -tr nnUNetTrainerIBUNet_5
 
 @REM python 4_predict.py -i ../data_result/nnUNet_raw/Dataset100_CPSegmentation/imagesTs -o ../data_result\nnUNet_raw\Dataset100_CPSegmentation\predictions_2 -c 2d -d 100 -f 2
 
