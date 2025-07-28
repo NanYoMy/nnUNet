@@ -6,12 +6,12 @@
 
 @REM 2_plan_and_preprocess.py
 
-@REM python 3_train_network.py 100 2d all -tr nnUNetTrainerAttUNet
-python 3_train_network.py 100 2d all -tr nnUNetTrainerUNetPlain
-python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5_4_3
-python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5_4
-python 3_train_network.py 100 2d all -tr nnUNetTrainerIBUNet_5
-@REM python 3_train_network.py 100 2d all -tr nnUNetTrainerNoDeepSupervision
+python 3_train_network.py 101 2d all -tr nnUNetTrainerAttUNet
+python 3_train_network.py 101 2d all -tr nnUNetTrainerUNetPlain
+python 3_train_network.py 101 2d all -tr nnUNetTrainerIBUNet_5_4_3
+python 3_train_network.py 101 2d all -tr nnUNetTrainerIBUNet_5_4
+python 3_train_network.py 101 2d all -tr nnUNetTrainerIBUNet_5
+python 3_train_network.py 101 2d all -tr nnUNetTrainerNoDeepSupervision
 
 @REM python 3_train_network.py 100 2d all -tr nnUNetTrainerBN
 
