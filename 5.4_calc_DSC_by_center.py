@@ -24,7 +24,7 @@ base_dir = "../data_result/nnUNet_raw/Dataset101_CPSegmentation/"
 # for i in ['attunet_pred','IBunet_5_4_3_pred','IBunet_5_4_pred','IBunet_5_pred',"nodeep_pred","plainunet_pred",'predictions_final']:
 DSC = {}
 IOU = {}
-methods = ["plainunet_pred", 'attunet_pred', "nodeep_pred",'IBunet_5_4_3_pred',  'predictions_final']
+methods = ["plainunet_pred", 'attunet_pred', "nodeep_pred",'IBunet_5_4_3_pred',  'predictions_final','IBunet_5_4_pred','IBunet_5_pred','predictions_3']
 centers = ['CenterB', 'CenterC', 'CenterD']
 
 # Initialize dictionaries to store results for each method and center

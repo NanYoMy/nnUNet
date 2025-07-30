@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     source = '../datasets/CP_PNG'
 
-    dataset_name = 'Dataset101_CPSegmentation'
+    dataset_name = 'Dataset103_CPSegmentation'
 
     imagestr = join(nnUNet_raw, dataset_name, 'imagesTr')
     imagests = join(nnUNet_raw, dataset_name, 'imagesTs')
